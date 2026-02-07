@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[夏芊怡]的新年祝福</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, 
+                #d32f2f 0%, 
+                #b71c1c 40%, 
+                #8b0000 80%, 
+                #4a0000 100%);
+            color: #fff;
+            min-height: 100vh;
+            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 背景装饰 */
+        .bg-decoration {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .lantern {
+            position: absolute;
+            font-size: 3rem;
+            color: #FFD700;
+            animation: swing 4s infinite ease-in-out;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+        }
+        
+        .lantern:nth-child(1) { top: 10%; left: 5%; }
+        .lantern:nth-child(2) { top: 15%; right: 8%; animation-delay: 1s; }
+        .lantern:nth-child(3) { bottom: 20%; left: 8%; animation-delay: 2s; }
+        .lantern:nth-child(4) { bottom: 10%; right: 5%; animation-delay: 3s; }
+        
+        @keyframes swing {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        /* 主卡片 */
+        .card {
+            background: linear-gradient(145deg, 
+                rgba(255, 255, 255, 0.12), 
+                rgba(255, 255, 255, 0.06));
+            backdrop-filter: blur(12px);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 0 2px rgba(255, 215, 0, 0.2),
+                0 0 40px rgba(255, 215, 0, 0.2);
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            animation: cardAppear 1s ease-out;
+        }
+        
+        @keyframes cardAppear {
+            from { 
+                opacity: 0; 
+                transform: translateY(50px) scale(0.9); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+        
+        /* 照片区域 */
+        .photo-section {
+            margin-bottom: 40px;
+        }
+        
+        .photo-frame {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            position: relative;
+            overflow: hidden;
+            border: 8px solid #FFD700;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                inset 0 0 30px rgba(255, 215, 0, 0.3);
+            animation: photoGlow 3s infinite alternate;
+        }
+        
+        @keyframes photoGlow {
+            0% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(255, 215, 0, 0.3); }
+            100% { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.4), inset 0 0 40px rgba(255, 215, 0, 0.4); }
+        }
+        
+        .my-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-frame:hover .my-photo {
+            transform: scale(1.05);
+        }
+        
+        .photo-frame::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            border: 3px dashed rgba(255, 215, 0, 0.5);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* 文字内容 */
+        .name {
+            font-size: 3.5rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+            text-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(255, 215, 0, 0.5);
+            letter-spacing: 3px;
+        }
+        
+        .title {
+            font-size: 4.5rem;
+            color: #FFD700;
+            margin: 40px 0;
+            text-shadow: 
+                0 3px 6px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(255, 215, 0, 0.7);
+            animation: titleGlow 2s infinite alternate;
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        @keyframes titleGlow {
+            0% { 
+                text-shadow: 
+                    0 3px 6px rgba(0, 0, 0, 0.6),
+                    0 0 30px rgba(255, 215, 0, 0.7); 
+            }
+            100% { 
+                text-shadow: 
+                    0 3px 6px rgba(0, 0, 0, 0.6),
+                    0 0 40px rgba(255, 215, 0, 0.9),
+                    0 0 60px rgba(255, 215, 0, 0.6); 
+            }
+        }
+        
+        .title::before,
+        .title::after {
+            content: '✨';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            animation: sparkle 2s infinite;
+        }
+        
+        .title::before { left: -50px; }
+        .title::after { right: -50px; animation-delay: 1s; }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; transform: translateY(-50%) scale(0.8); }
+            50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+        }
+        
+        .message {
+            font-size: 1.6rem;
+            color: #FFF8DC;
+            line-height: 1.8;
+            margin: 30px 0;
+            padding: 0 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+        
+        .wishes {
+            font-size: 1.8rem;
+            color: #FFD700;
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .wishes::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 215, 0, 0.1), 
+                transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .signature {
+            font-size: 1.8rem;
+            color: #FFD700;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+            font-style: italic;
+        }
+        
+        /* 新年装饰 */
+        .new-year-symbols {
+            font-size: 2.5rem;
+            margin: 30px 0;
+            animation: bounce 2s infinite ease-in-out;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* 交互按钮 */
+        .interaction {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #FFD700, #FF8C00);
+            color: #8b0000;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 140, 0, 0.5);
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .card {
+                padding: 30px 20px;
+            }
+            
+            .photo-frame {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .name {
+                font-size: 2.8rem;
+            }
+            
+            .title {
+                font-size: 3.5rem;
+            }
+            
+            .message {
+                font-size: 1.4rem;
+            }
+            
+            .wishes {
+                font-size: 1.6rem;
+            }
+            
+            .interaction {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 90%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .photo-frame {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .title {
+                font-size: 2.8rem;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+            }
+            
+            .title::before,
+            .title::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景装饰 -->
+    <div class="bg-decoration">
+        <div class="lantern">🏮</div>
+        <div class="lantern">🏮</div>
+        <div class="lantern">🏮</div>
+        <div class="lantern">🏮</div>
+    </div>
+    
+    <!-- 主卡片 -->
+    <div class="card">
+        <div class="photo-section">
+            <div class="photo-frame">
+                <!-- 在这里替换成您的照片 -->
+                <img src="photo.jpg" alt="[夏芊怡]的照片" class="my-photo">
+            </div>
+            <h1 class="name">[夏芊怡]</h1>
+        </div>
+        
+        <div class="new-year-symbols">🎉 🐕 🎊</div>
+        
+        <h2 class="title">新年快乐</h2>
+        
+        <div class="message">
+            <p>在这辞旧迎新的美好时刻，</p>
+            <p>我衷心送上最诚挚的祝福：</p>
+        </div>
+        
+        <div class="wishes">
+            <p>愿您在新的一年里：</p>
+            <p class="highlight">身体健康，万事如意</p>
+            <p class="highlight">事业顺利，财源广进</p>
+            <p class="highlight">笑口常开，幸福美满</p>
+        </div>
+        
+        <div class="message">
+            <p>让所有的美好如期而至，</p>
+            <p>让所有的幸运不期而遇。</p>
+            <p>2025年，我们一起迎接更好的明天！</p>
+        </div>
+        
+        <div class="new-year-symbols">🎁 🎇 🎆</div>
+        
+        <div class="interaction">
+            <button class="btn" id="musicBtn">
+                <i class="fas fa-music"></i> 播放音乐
+            </button>
+            <button class="btn" id="fireworksBtn">
+                <i class="fas fa-fireworks"></i> 烟花庆祝
+            </button>
+            <button class="btn" id="copyBtn">
+                <i class="fas fa-share-alt"></i> 分享祝福
+            </button>
+        </div>
+        
+        <div class="signature">
+            最诚挚的祝福<br>
+            [夏芊怡]<br>
+            2025年春节
+        </div>
+    </div>
+    
+    <script>
+        // 播放新年音乐
+        document.getElementById('musicBtn').addEventListener('click', function() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // 简单的《新年好》旋律
+            const melody = [523.25, 587.33, 659.25, 523.25, 523.25, 587.33, 659.25, 523.25];
+            let time = audioContext.currentTime;
+            
+            melody.forEach((note, index) => {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = note;
+                oscillator.type = index % 2 === 0 ? 'sine' : 'triangle';
+                
+                gainNode.gain.setValueAtTime(0, time);
+                gainNode.gain.linearRampToValueAtTime(0.2, time + 0.1);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, time + 0.3);
+                
+                oscillator.start(time);
+                oscillator.stop(time + 0.3);
+                
+                time += 0.15;
+            });
+            
+            showMessage("🎵 播放《新年好》音乐！");
+            
+            // 照片动画
+            const photo = document.querySelector('.photo-frame');
+            photo.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                photo.style.transform = '';
+            }, 300);
+        });
+        
+        // 烟花效果
+        document.getElementById('fireworksBtn').addEventListener('click', function() {
+            createFireworks();
+            showMessage("🎆 烟花绽放，新年大吉！");
+        });
+        
+        function createFireworks() {
+            const colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#FF8E53'];
+            
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.style.cssText = `
+                        position: fixed;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 10000;
+                        top: ${Math.random() * 100}%;
+                        left: ${Math.random() * 100}%;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        box-shadow: 0 0 15px currentColor;
+                        opacity: 0;
+                    `;
+                    
+                    document.body.appendChild(firework);
+                    
+                    // 爆炸效果
+                    const duration = 1000 + Math.random() * 1000;
+                    const startX = parseFloat(firework.style.left);
+                    const startY = parseFloat(firework.style.top);
+                    
+                    const startTime = Date.now();
+                    
+                    function animate() {
+                        const elapsed = Date.now() - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        
+                        if (progress < 1) {
+                            // 抛物线运动
+                            const x = (Math.random() - 0.5) * 100 * progress;
+                            const y = (Math.random() - 0.5) * 100 * progress + 0.5 * 9.8 * progress * progress * 5;
+                            
+                            firework.style.transform = `translate(${x}px, ${y}px)`;
+                            firework.style.opacity = 1 - progress;
+                            requestAnimationFrame(animate);
+                        } else {
+                            firework.remove();
+                        }
+                    }
+                    
+                    animate();
+                }, i * 100);
+            }
+        }
+        
+        // 分享祝福
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const shareText = `[您的名字]祝您新年快乐！🎉 愿您在新的一年里身体健康，万事如意，财源广进！`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: '新年祝福',
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else if (navigator.clipboard) {
+                navigator.clipboard.writeText(shareText)
+                    .then(() => showMessage("📋 祝福语已复制到剪贴板！"))
+                    .catch(err => showMessage("复制失败：" + err));
+            } else {
+                prompt("复制以下祝福语：", shareText);
+                showMessage("📋 请手动复制上面的祝福语");
+            }
+        });
+        
+        // 显示消息
+        function showMessage(text) {
+            // 移除现有消息
+            const existingMsg = document.querySelector('.notification');
+            if (existingMsg) existingMsg.remove();
+            
+            // 创建新消息
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = text;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: linear-gradient(135deg, 
+                    rgba(255, 215, 0, 0.95), 
+                    rgba(255, 140, 0, 0.95));
+                color: #8b0000;
+                padding: 15px 30px;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: bold;
+                z-index: 10000;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+                border: 3px solid #FFD700;
+                animation: slideDown 0.3s ease-out, slideUp 0.3s ease-in 2.7s;
+                white-space: nowrap;
+                max-width: 90%;
+                text-align: center;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // 3秒后移除
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        // 添加CSS动画
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideDown {
+                from { 
+                    opacity: 0; 
+                    transform: translateX(-50%) translateY(-50px); 
+                }
+                to { 
+                    opacity: 1; 
+                    transform: translateX(-50%) translateY(0); 
+                }
+            }
+            
+            @keyframes slideUp {
+                from { 
+                    opacity: 1; 
+                    transform: translateX(-50%) translateY(0); 
+                }
+                to { 
+                    opacity: 0; 
+                    transform: translateX(-50%) translateY(-50px); 
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // 照片点击放大
+        document.querySelector('.photo-frame').addEventListener('click', function() {
+            this.classList.toggle('enlarged');
+            if (this.classList.contains('enlarged')) {
+                this.style.width = '350px';
+                this.style.height = '350px';
+                this.style.position = 'fixed';
+                this.style.top = '50%';
+                this.style.left = '50%';
+                this.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                this.style.zIndex = '1000';
+                this.style.transition = 'all 0.5s ease';
+            } else {
+                this.style.width = '';
+                this.style.height = '';
+                this.style.position = '';
+                this.style.top = '';
+                this.style.left = '';
+                this.style.transform = '';
+                this.style.zIndex = '';
+            }
+        });
+        
+        // 页面加载效果
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                showMessage("🎊 新年快乐！欢迎来到我的祝福页面 🎊");
+                createFireworks();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
